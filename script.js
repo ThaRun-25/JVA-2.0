@@ -1248,7 +1248,7 @@ function addDynamicStyles() {
         /* PROJECT FILTERS */
         .project.filter-hidden {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translate3d(var(--project-scroll-x, 0px), 20px, 0);
             pointer-events: none;
         }
 
@@ -1259,7 +1259,7 @@ function addDynamicStyles() {
         }
 
         /* SCROLL REVEAL */
-        .reveal {
+        .reveal:not(.project) {
             opacity: 0;
             transform: translateY(50px);
             transition:
@@ -1267,7 +1267,7 @@ function addDynamicStyles() {
                 transform 1s cubic-bezier(.22, 1, .36, 1);
         }
 
-        .reveal.revealed {
+        .reveal.revealed:not(.project) {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1410,6 +1410,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initParallax();
     initGlobalMotion();
     initProjectHover();
+    initProjectScrollMotion();
     initHeader();
     initImageLoading();
     initMagneticButtons();
@@ -1420,3 +1421,68 @@ document.addEventListener("DOMContentLoaded", () => {
     initViewportHeight();
     initVisibilityHandling();
 });
+
+
+/* =========================================================
+   PROJECT SCROLL DIRECTION
+   Left projects drift right; right projects drift left.
+========================================================= */
+
+function initProjectScrollMotion() {
+    const projects = Array.from(document.querySelectorAll(".work-section .project"));
+
+    if (!projects.length) return;
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) return;
+
+    let ticking = false;
+
+    function updateProjectMotion() {
+        const viewportCenter = window.innerHeight * 0.5;
+
+        projects.forEach((project, index) => {
+            if (project.style.display === "none") return;
+
+            const rect = project.getBoundingClientRect();
+            const projectCenter = rect.top + rect.height * 0.5;
+
+            /*
+             * Projects are deliberately given opposite directions.
+             * The closer they get to the viewport centre, the stronger
+             * the horizontal travel becomes.
+             */
+            const distance = projectCenter - viewportCenter;
+            const normalized = Math.max(
+                -1,
+                Math.min(1, distance / (window.innerHeight * 0.9))
+            );
+
+            const proximity = 1 - Math.min(1, Math.abs(normalized));
+            const direction = index % 2 === 0 ? 1 : -1;
+
+            const shift = direction * proximity * 110;
+
+            project.style.setProperty(
+                "--project-scroll-x",
+                `${shift.toFixed(2)}px`
+            );
+        });
+
+        ticking = false;
+    }
+
+    function requestProjectMotion() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateProjectMotion);
+    }
+
+    window.addEventListener("scroll", requestProjectMotion, { passive: true });
+    window.addEventListener("resize", requestProjectMotion);
+
+    updateProjectMotion();
+}

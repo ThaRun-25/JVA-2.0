@@ -5505,3 +5505,151 @@ a:focus-visible {
         color: var(--ink);
     }
 }
+
+
+/* =========================================================
+   WORK SECTION — DARK OLIVE / EDITORIAL PROJECT ROWS
+========================================================= */
+
+.work-section {
+    background: #2D3417 !important;
+    color: var(--cream-light);
+    overflow: hidden;
+}
+
+/* Let the section feel like a dark architectural field. */
+.work-section::before {
+    background: rgba(248,243,237,.16) !important;
+}
+
+.work-section::after {
+    border-color: rgba(248,243,237,.14) !important;
+}
+
+.work-intro .section-label,
+.work-intro p {
+    color: rgba(248,243,237,.70) !important;
+}
+
+.work-intro h2 {
+    color: var(--cream-light);
+}
+
+.work-filters {
+    border-top-color: rgba(248,243,237,.22) !important;
+    border-bottom-color: rgba(248,243,237,.22) !important;
+}
+
+.work-filters button {
+    color: rgba(248,243,237,.76) !important;
+}
+
+.work-filters button:hover,
+.work-filters button.active {
+    color: #E6B7B4 !important;
+}
+
+/* One project per row, alternating sides. */
+.project-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 170px !important;
+    margin-top: 80px !important;
+}
+
+.project {
+    --project-scroll-x: 0px;
+    width: min(70vw, 980px) !important;
+    margin: 0 !important;
+    grid-column: auto !important;
+    align-self: flex-start;
+    opacity: 0;
+    transform: translate3d(var(--project-scroll-x), 70px, 0) !important;
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.2,.7,.2,1) !important;
+}
+
+.project:nth-child(even) {
+    align-self: flex-end;
+}
+
+.project.revealed {
+    opacity: 1;
+    transform: translate3d(var(--project-scroll-x), 0, 0) !important;
+}
+
+/* Scroll-driven horizontal movement: JS updates the variable. */
+.project-image {
+    background: rgba(248,243,237,.08);
+}
+
+.project-image::after {
+    background: rgba(15,18,8,.08) !important;
+}
+
+.project-number {
+    background: rgba(248,243,237,.94) !important;
+    color: #211914 !important;
+}
+
+.project-info {
+    border-top-color: rgba(248,243,237,.25) !important;
+}
+
+.project-info h3 {
+    color: var(--cream-light);
+}
+
+.project-info span {
+    color: rgba(248,243,237,.66) !important;
+}
+
+.project-arrow {
+    color: var(--cream-light) !important;
+}
+
+.project:hover .project-info h3,
+.project:hover .project-arrow {
+    color: #E6B7B4 !important;
+}
+
+.project.filter-hidden {
+    opacity: 0 !important;
+    transform: translate3d(var(--project-scroll-x), 20px, 0) !important;
+}
+
+@media (max-width: 1100px) {
+    .project {
+        width: min(78vw, 820px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-section {
+        padding: 110px 20px 130px !important;
+    }
+
+    .project-grid {
+        gap: 100px !important;
+        margin-top: 55px !important;
+    }
+
+    .project,
+    .project:nth-child(even) {
+        width: 100% !important;
+        align-self: stretch !important;
+    }
+
+    .project.revealed {
+        transform: translate3d(var(--project-scroll-x), 0, 0) !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project,
+    .project.revealed,
+    .project.filter-hidden {
+        transform: translate3d(0, 0, 0) !important;
+    }
+}
