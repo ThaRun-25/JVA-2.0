@@ -564,319 +564,162 @@
 
 
 
-            <!-- Project Grid -->
+            <!-- Project List -->
 
             <div class="project-grid">
 
-
-
-                <!-- =========================================
-                     PROJECT 01
-                ========================================== -->
-
+                <!-- PROJECT 01 -->
                 <article
-                    class="project project-large"
-                    data-category="architecture"
-                >
-
-
+    class="project project-large"
+    data-category="architecture"
+    onclick="
+        sessionStorage.setItem('jvaWorkScroll', window.scrollY);
+        window.location.href='within.html';
+    "
+    role="link"
+    tabindex="0"
+    onkeydown="
+        if(event.key === 'Enter' || event.key === ' ')
+        {
+            sessionStorage.setItem('jvaWorkScroll', window.scrollY);
+            window.location.href='within.html';
+        }
+    "
+>
                     <div class="project-image">
-
-                        <img
-                            src="assets/courtyard-house.jpg"
-                            alt="The Courtyard House"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            01
-                        </span>
-
+                        <img src="assets/within-02.PNG" alt="WITHIN — Moroccan-Inspired Farmhouse" loading="lazy">
+                        <span class="project-number">01</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                The Courtyard House
-                            </h3>
-
-                            <span>
-                                RESIDENTIAL
-                            </span>
-
+                            <h3>WITHIN — Moroccan-Inspired Farmhouse</h3>
+                            <span>ARCHITECTURE</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
-
-
-                <!-- =========================================
-                     PROJECT 02
-                ========================================== -->
-
-                <article
-                    class="project project-medium"
-                    data-category="architecture"
-                >
-
-
+                <!-- PROJECT 02 -->
+                <article class="project project-medium" data-category="architecture">
                     <div class="project-image">
-
-                        <img
-                            src="assets/kiosk.jpg"
-                            alt="Kiosk 2.0"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            02
-                        </span>
-
+                        <img src="assets/2/IN PASSING hero render .PNG" alt="IN PASSING — Campus Kiosk" loading="lazy">
+                        <span class="project-number">02</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                Kiosk 2.0
-                            </h3>
-
-                            <span>
-                                PUBLIC / RETAIL
-                            </span>
-
+                            <h3>IN PASSING — Campus Kiosk</h3>
+                            <span>ARCHITECTURE</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
-
-
-                <!-- =========================================
-                     PROJECT 03
-                ========================================== -->
-
-                <article
-                    class="project project-wide"
-                    data-category="academic"
-                >
-
-
+                <!-- PROJECT 03 -->
+                <article class="project project-wide" data-category="academic">
                     <div class="project-image">
-
-                        <img
-                            src="assets/learning-landscapes.jpg"
-                            alt="Learning Landscapes"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            03
-                        </span>
-
+                        <img src="assets/3/2b.jpeg" alt="LEARNING GROUNDS — Rural School" loading="lazy">
+                        <span class="project-number">03</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                Learning Landscapes
-                            </h3>
-
-                            <span>
-                                EDUCATION
-                            </span>
-
+                            <h3>LEARNING GROUNDS — Rural School</h3>
+                            <span>ACADEMIC</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
-
-
-                <!-- =========================================
-                     PROJECT 04
-                ========================================== -->
-
-                <article
-                    class="project project-wide"
-                    data-category="interiors"
-                >
-
-
+                <!-- PROJECT 04 -->
+                <article class="project project-wide" data-category="architecture">
                     <div class="project-image">
-
-                        <img
-                            src="assets/urban-living.jpg"
-                            alt="Urban Living"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            04
-                        </span>
-
+                        <img src="assets/urban-living.jpg" alt="COMMON THREAD — Student Housing" loading="lazy">
+                        <span class="project-number">04</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                Urban Living
-                            </h3>
-
-                            <span>
-                                HOUSING
-                            </span>
-
+                            <h3>COMMON THREAD — Student Housing</h3>
+                            <span>ARCHITECTURE</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
-
-
-                <!-- =========================================
-                     PROJECT 05
-                ========================================== -->
-
-                <article
-                    class="project project-wide"
-                    data-category="interiors"
-                >
-
-
+                <!-- PROJECT 05 -->
+                <article class="project project-wide" data-category="interiors">
                     <div class="project-image">
-
-                        <img
-                            src="assets/listening-hotel.jpg"
-                            alt="The Listening Hotel"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            05
-                        </span>
-
+                        <img src="assets/listening-hotel.jpg" alt="THE LOBBY ABOVE — Business Hotel" loading="lazy">
+                        <span class="project-number">05</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                The Listening Hotel
-                            </h3>
-
-                            <span>
-                                HOSPITALITY
-                            </span>
-
+                            <h3>THE LOBBY ABOVE — Business Hotel</h3>
+                            <span>INTERIORS</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
-
-
-                <!-- =========================================
-                     PROJECT 06
-                ========================================== -->
-
-                <article
-                    class="project project-medium"
-                    data-category="research"
-                >
-
-
+                <!-- PROJECT 06 -->
+                <article class="project project-medium" data-category="interiors">
                     <div class="project-image">
-
-                        <img
-                            src="assets/tal.jpg"
-                            alt="Tal Music Experience Store"
-                            loading="lazy"
-                        >
-
-                        <span class="project-number">
-                            06
-                        </span>
-
+                        <img src="assets/tal.jpg" alt="TAAL — Indian Music Experience Store" loading="lazy">
+                        <span class="project-number">06</span>
                     </div>
-
-
                     <div class="project-info">
-
                         <div>
-
-                            <h3>
-                                Tal — Music Experience Store
-                            </h3>
-
-                            <span>
-                                INTERIOR / CULTURAL
-                            </span>
-
+                            <h3>TAAL — Indian Music Experience Store</h3>
+                            <span>INTERIORS</span>
                         </div>
-
-
-                        <span class="project-arrow">
-                            →
-                        </span>
-
+                        <span class="project-arrow">→</span>
                     </div>
-
-
                 </article>
 
+                <!-- PROJECT 07 -->
+                <article class="project project-wide" data-category="research">
+                    <div class="project-image">
+                        <img src="assets/jva-veranda.jpg" alt="COMMON GROUND — Community Centre · LEN+K Prague" loading="lazy">
+                        <span class="project-number">07</span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>COMMON GROUND — Community Centre · LEN+K Prague</h3>
+                            <span>RESEARCH / LEN+K PRAGUE</span>
+                        </div>
+                        <span class="project-arrow">→</span>
+                    </div>
+                </article>
+
+                <!-- PROJECT 08 -->
+                <article class="project project-wide" data-category="research">
+                    <div class="project-image">
+                        <img src="assets/jva-veranda.jpg" alt="IN TRANSLATION — Modular House Façade · LEN+K Prague" loading="lazy">
+                        <span class="project-number">08</span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>IN TRANSLATION — Modular House Façade · LEN+K Prague</h3>
+                            <span>RESEARCH / LEN+K PRAGUE</span>
+                        </div>
+                        <span class="project-arrow">→</span>
+                    </div>
+                </article>
+
+                <!-- PROJECT 09 -->
+                <article class="project project-wide" data-category="interiors">
+                    <div class="project-image">
+                        <img src="assets/jva-veranda.jpg" alt="BETWEEN INSIDE &amp; OUT — Balcony Renovation · Freelance" loading="lazy">
+                        <span class="project-number">09</span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>BETWEEN INSIDE &amp; OUT — Balcony Renovation · Freelance</h3>
+                            <span>INTERIORS / FREELANCE</span>
+                        </div>
+                        <span class="project-arrow">→</span>
+                    </div>
+                </article>
 
             </div>
-
 
         </section>
 

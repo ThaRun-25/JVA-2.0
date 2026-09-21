@@ -5232,14 +5232,22 @@ a:focus-visible {
     letter-spacing: 0.01em;
 }
 
-.work-section .work-filters,
+.work-section .work-filters {
+    position: relative;
+    z-index: 5;
+}
+
 .work-section .work-filters button {
     font-weight: 600 !important;
-    color: rgba(45, 37, 31, 0.78) !important;
+    color: rgba(45, 37, 31, 0.85) !important;
+}
+
+.work-section .work-filters button:hover {
+    color: #211914 !important;
 }
 
 .work-section .work-filters button.active {
-    color: var(--rose) !important;
+    color: #c9827d !important;
 }
 
 /* Keep content readable above the decorative layer */
@@ -5652,4 +5660,54 @@ a:focus-visible {
     .project.filter-hidden {
         transform: translate3d(0, 0, 0) !important;
     }
+}
+
+
+/* =========================================================
+   PROJECT TITLES — NEW JVA PROJECT LIST
+========================================================= */
+.project-info h3 {
+    max-width: 85%;
+    line-height: 1.15;
+}
+
+@media (max-width: 768px) {
+    .project-info h3 {
+        max-width: 92%;
+    }
+}
+/* =========================================================
+   PROJECT FILTERS — DARK OLIVE SECTION
+========================================================= */
+
+.work-filters button {
+    color: rgba(248, 243, 237, 0.85) !important;
+}
+
+.work-filters button:hover {
+    color: #F8F3ED !important;
+}
+
+.work-filters button.active {
+    color: #E6A6A4 !important;
+}
+/* =========================================================
+   FINAL OVERRIDE — WORK FILTERS ON DARK OLIVE
+   ========================================================= */
+.work-section .work-filters button,
+.work-section .work-filters button:not(.active) {
+    color: #F8F3ED !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #F8F3ED !important;
+}
+
+.work-section .work-filters button:hover,
+.work-section .work-filters button:focus-visible {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.work-section .work-filters button.active {
+    color: #E6A6A4 !important;
+    -webkit-text-fill-color: #E6A6A4 !important;
 }
